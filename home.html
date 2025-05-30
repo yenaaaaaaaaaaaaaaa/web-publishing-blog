@@ -2,9 +2,150 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
+    <style>
+        header h1 {
+        text-align: center;
+
+        }
+        #menu_button{
+            position: fixed;
+            top: 5px;
+            right: 20px;
+            color: #333;
+            font-size: 1em;
+            cursor: pointer;
+            margin-left: 1em;
+            padding:0.3em 0.5em;
+            transition: right 0.3s ease;
+        }
+        #menu_button.active{
+            right: 270px;
+        }
+        aside{
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 230px;
+            height: 100%;
+            background: #f5f5f5;
+            padding: 1em;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+            transition: right 0.3s ease;
+        }
+        aside.active {
+            right: 0;
+        }
+        h2{
+            color: #69F;
+        }
+        #about{
+             text-decoration: none;
+             color: #69F;
+        }
+        #about:hover{
+            color: #C9F;
+        }
+        #about:active{
+            color: #99C;
+        }
+
+    </style>
+    <script>
+        alert('Welcome to Our Blog :)');
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const menuButton = document.getElementById('menu_button');
+            const aside = document.querySelector('aside');
+            const moveButton = document.querySelector('#menu_button');
+
+            menuButton.addEventListener('click', () => {
+                aside.classList.toggle('active');
+                moveButton.classList.toggle('active');
+
+            });
+        });
+    </script>
 </head>
 <body>
+    <button id="menu_button">☰</button>
+    <header>
+        <h1>
+            <a href="home.html" style="text-decoration: none;">
+                <span style="border-radius: 5em;
+                padding: 0.5em 1em;
+                background: #F9F9F9;
+                box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
+                color: #69F;
+                margin-left: 5px;
+                border: 2px dashed">
+                    Cho&Kang's Blog ~.~
+                </span>
+            </a>
+        </h1>
+        <nav>
+            <img src="res/banner.jpeg" alt="banner">
+        </nav>
+    </header>
+    <section>
+        <h2>Explore Posts You'll Love</h2>
+        <article>
+            <ul>
+                <li>
+                    <a href="#Recommend">Recommend</a>
+                </li>
+                <li>
+                    <a href="#Recent">Recent Post</a>
+                </li>
+                <li>
+                    <a href="#Liked">Most Liked</a>
+                </li>
+            </ul>
+        </article>
+    </section>
+    <section>
+        <article>
+            <h2 id="Recommend" >Recommend</h2>
+            <img src="res/post2-1.jpeg" alt="category2_Post1 Thumbnail">
+            <h3><a href="category2/post1.html">Title of the Post</a></h3>
+            <p>A brief description of the Post</p>
+        </article>
+        <article>
+            <h2 id="Recent">Recent Post</h2>
+            <img src="res/post1-1.jpeg" alt="Category1_Post1 Thumbnail">
+            <h3><a href="category1/post1.html">Title of the Post</a> </h3> <!--사진 눌렀을 때 이동하게 해도 ㄱㅊ -->
+            <p>A brief description of the Post</p>
+        </article>
+        <article>
+            <h2 id="Liked">Most Liked</h2>
+            <img src="res/post3-2.jpeg" alt="Category3_Post2 Thumbnail">
+            <h3><a href="category3/post2.html">Title of the Post</a> </h3>
+            <p>A brief description of the Post</p>
+        </article>
+    </section>
+    <aside>
+        <h2>Explore Categories</h2>
+        <ul>
+            <li>
+                <a href="category1/category1_main.html">Category 1</a>
+            </li>
+            <li>
+                <a href="category2/category2_main.html">Category 2</a>
+            </li>
+            <li>
+                <a href="category3/category3_main.html">Category 3</a>
+            </li>
+        </ul>
+    </aside>
+
+    <footer>
+        <a id="about" href="about.html">More About Our Blog</a>
+        <p>
+            <a href="#">Instagram</a>
+            <a href="#">GitHub</a>
+        </p>
+    </footer>
+
 
 </body>
 </html>
