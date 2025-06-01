@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <style>
-        header h1 {
-        text-align: center;
-
-        }
         #menu_button{
             position: fixed;
             top: 5px;
@@ -22,7 +18,7 @@
         #menu_button.active{
             right: 270px;
         }
-        aside{
+        #categories{
             position: fixed;
             top: 0;
             right: -250px;
@@ -33,7 +29,7 @@
             box-shadow: -2px 0 5px rgba(0,0,0,0.3);
             transition: right 0.3s ease;
         }
-        aside.active {
+        #categories.active {
             right: 0;
         }
         h2{
@@ -49,13 +45,21 @@
         #about:active{
             color: #99C;
         }
-        table{
-            border: 2px solid #7fabc7;
+        #left{
+            position: fixed;
+            top: 100px;
+            left: 10px;
         }
-        th, td{
-            border: 2px solid #7fabc7;
+        main {
+            display: block;
         }
-
+        section {
+            margin-left: 280px;
+            margin-top : 38px;
+            border: 2px solid #f2f2f2;
+            margin-right: 20px;
+            padding: 30px;
+        }
 
     </style>
     <script>
@@ -63,11 +67,11 @@
         document.addEventListener('DOMContentLoaded', () => {
 
             const menuButton = document.getElementById('menu_button');
-            const aside = document.querySelector('aside');
+            const categories = document.querySelector('#categories');
             const moveButton = document.querySelector('#menu_button');
 
             menuButton.addEventListener('click', () => {
-                aside.classList.toggle('active');
+                categories.classList.toggle('active');
                 moveButton.classList.toggle('active');
 
             });
@@ -75,62 +79,23 @@
     </script>
 </head>
 <body>
-    <button id="menu_button">☰</button>
-    <header>
-        <h1>
-            <a href="home.html" style="text-decoration: none;">
+<button id="menu_button" style="text-align: center;">☰</button>
+<header>
+    <h1 style="text-align: center;">
+        <a href="home.html" style="text-decoration: none;">
                 <span style="border-radius: 5em;
                 padding: 0.5em 1em;
                 background: #F9F9F9;
                 box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
                 color: #69F;
                 margin-left: 5px;
-                border: 2px dashed">
+                border: 2px dashed;">
                     Cho&Kang's Blog ~.~
                 </span>
-            </a>
-        </h1>
-        <nav>
-            <table>
-                <thead>
-                    <tr>
-                        <th colspan="2">
-                            <img src="res/banner.jpeg" alt="banner" width="250px" height="auto">
-                        </th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td colspan="2">
-                        <h3>
-                            <img src="res/profile.jpeg" alt="profile" width="50px" height="auto" style="position: relative; right: -20px;" >
-                            <span style="position: relative; top: -20px; right: -20px;">Cho&Kang</span>
-                        </h3>
-                        <h5 style="color: #9c9ca0; position: relative; top: -17px; right: -20px;">Cho&Kang@hanyang.ToT</h5>
-                        <p style="position: relative; top: -35px; right: -20px;">Hi~.~ <br>Nice to meet you</p>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </nav>
-    </header>
-    <section>
-        <h2>Explore Posts You'll Love</h2>
-        <article>
-            <ul>
-                <li>
-                    <a href="#Recommend">Recommend</a>
-                </li>
-                <li>
-                    <a href="#Recent">Recent Post</a>
-                </li>
-                <li>
-                    <a href="#Liked">Most Liked</a>
-                </li>
-            </ul>
-        </article>
-    </section>
+        </a>
+    </h1>
+</header>
+<main>
     <section>
         <article>
             <h2 id="Recommend" >Recommend</h2>
@@ -151,7 +116,7 @@
             <p>A brief description of the Post</p>
         </article>
     </section>
-    <aside>
+    <aside id="categories">
         <h2>Explore Categories</h2>
         <ul>
             <li>
@@ -165,14 +130,53 @@
             </li>
         </ul>
     </aside>
-
-    <footer>
-        <a id="about" href="about.html">More About Our Blog</a>
-        <p>
-            <a href="#">Instagram</a>
-            <a href="#">GitHub</a>
-        </p>
-    </footer>
+    <aside id="left">
+        <table style=" border: 2px solid #f2f2f2; margin: 5px;">
+            <thead>
+            <tr>
+                <th colspan="2" style=" border: 2px solid #7fabc7;">
+                    <img src="res/banner.jpeg" alt="banner" width="250px" height="auto">
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td colspan="2" style=" border: 2px solid #7fabc7;">
+                    <h3>
+                        <img src="res/profile.jpeg" alt="profile" width="50px" height="auto" style="position: relative; right: -20px;" >
+                        <span style="position: relative; top: -20px; right: -20px;">Cho&Kang</span>
+                    </h3>
+                    <h5 style="color: #9c9ca0; position: relative; top: -17px; right: -20px;">Cho&Kang@hanyang.ToT</h5>
+                    <p style="position: relative; top: -35px; right: -20px;">Hi~.~ <br>안농안농<br>성민아 오른쪽에 저 메뉴<br>그냥없앨까? 아님 그냥둘까?</p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h3 style="position: relative; right: -20px;">Explore Posts You'll Love</h3>
+                    <ul>
+                        <li>
+                            <a href="#Recommend">Recommend</a>
+                        </li>
+                        <li>
+                            <a href="#Recent">Recent Post</a>
+                        </li>
+                        <li>
+                            <a href="#Liked">Most Liked</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </aside>
+</main>
+<footer>
+    <a id="about" href="about.html">More About Our Blog</a>
+    <p>
+        <a href="#">Instagram</a>
+        <a href="#">GitHub</a>
+    </p>
+</footer>
 
 
 </body>
