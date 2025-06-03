@@ -32,8 +32,10 @@
     #categories.active {
         right: 0;
     }
-    h2{
+    h2{ 
         color: #69F;
+        text-align: center;
+        border-bottom: 2px solid #69F; /* 하단 밑줄 장식 */
     }
     #about{
          text-decoration: none;
@@ -62,6 +64,20 @@
         padding: 30px;
         background: #F9F9F9;
     }
+    .card {
+      width: 400px;
+      height: 350px;
+      border: 2px solid #f5f5f5;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      background: white;
+      margin: 20px auto;
+      font-family: sans-serif;
+      color: inherit;
+}
+
 
   </style>
   <script>
@@ -99,20 +115,60 @@
 <main>
   <section>
     <article>
-      <h2>Category1</h2>
+      <h2>Paris</h2>
+      <!--<article>
+        <h3>1. 에펠탑</h3>
+        <p>파리의 상징, 낮과 밤이 모두 아름다운 장소이다.</p>
+        <table style="border: 2px solid #69F; margin: 20px auto; background: #F9F9F9;">
+          <tr>
+            <td style="padding: 10px; background: #FFFFFF;">
+              <a href="post1.html" style="text-decoration: none; color: inherit; display: block;">
+              <h3 style="margin-bottom: 10px;">
+                <img src="../res/paris1.jpg" alt="에펠탑" width="300px">
+              </h3>
+              <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.9em; margin: 0;">
+                파리의 상징, 에펠탑은 낮에도 멋지지만 밤에 조명이 켜지면 더욱 황홀하다.
+              </h5>
+              </a>
+            </td>
+          </tr>
+        </table>
+      </article>-->
+      <article>
+  <h3>1. 에펠탑</h3>
+  <p>파리의 상징, 낮과 밤이 모두 아름다운 장소이다.</p>
+
+  <a href="post1.html" style="text-decoration: none;">
+    <div class="card">
+      <!-- 이미지 영역 -->
+      <div style="flex: 1 1 auto; overflow: hidden;">
+        <img src="../res/paris1.jpg" alt="에펠탑" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <!-- 텍스트 영역 -->
+      <div style="flex: 0 0 40px; padding: 15px;">
+        <h5 style="color: #080808; line-height: 0.2;">[파리 여행 DAY 1] 에펠탑, 기대 이상이었던 순간</h5>
+        <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.8em; margin: 0;">
+          파리의 상징, 에펠탑은 낮에도 멋지지만 밤에 조명이 켜지면 더욱 황홀하다.
+        </h5>
+      </div>
+    </div>
+  </a>
+</article>
+
     </article>
   </section>
   <aside id="categories">
     <h2>Explore Categories</h2>
     <ul>
       <li>
-        <a href="../category1/category1_main.html">Category 1</a>
+        <a href="../category1/category1_main.html">Paris</a>
       </li>
       <li>
-        <a href="../category2/category2_main.html">Category 2</a>
+        <a href="../category2/category2_main.html">London</a>
       </li>
       <li>
-        <a href="../category3/category3_main.html">Category 3</a>
+        <a href="../category3/category3_main.html">Barcelona</a>
       </li>
     </ul>
     <h2>More About Our Blog</h2>
@@ -126,7 +182,7 @@
     <table style=" border: 2px solid #f2f2f2; margin: 5px; background: #F9F9F9;">
       <thead>
       <tr>
-        <th colspan="2" style=" border: 2px solid #7fabc7;background: #F9F9F;">
+        <th colspan="2" style=" border: 2px solid #7fabc7;background: #F9F9F9;">
           <img src="../res/banner.jpeg" alt="banner" width="250px" height="auto">
         </th>
       </tr>

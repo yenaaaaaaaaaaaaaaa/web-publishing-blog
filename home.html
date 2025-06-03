@@ -60,7 +60,16 @@
             border: 2px solid #f2f2f2;
             margin-right: 20px;
             padding: 30px;
-            background: #F9F9F;
+
+            background-image: url('res/배경.jpeg');
+            background-repeat: repeat;         /* 반복 허용 (기본값이지만 명시해줌) */
+            background-size: auto;             /* 이미지 원래 크기로 */
+            background-position: top left;     /* 좌측 상단부터 반복 시작 */
+            min-height: 600px;  
+        }
+
+        body { 
+            background-image: url('res/배경1.jpg');
         }
 
     </style>
@@ -98,22 +107,22 @@
     </h1>
 </header>
 <main>
-    <section style="background: #F9F9F9;">
+    <section>
         <article>
             <h2 id="Recommend" >Recommend</h2>
-            <img src="res/post2-1.jpeg" alt="category2_Post1 Thumbnail">
+            <img src="res/post2-1.jpeg" alt="category2_Post1 Thumbnail" width="500">
             <h3><a href="category2/post1.html">Title of the Post</a></h3>
             <p>A brief description of the Post</p>
         </article>
         <article>
             <h2 id="Recent">Recent Post</h2>
-            <img src="res/post1-1.jpeg" alt="Category1_Post1 Thumbnail">
+            <img src="res/post1-1.jpeg" alt="Category1_Post1 Thumbnail" width="500">
             <h3><a href="category1/post1.html">Title of the Post</a> </h3> <!--사진 눌렀을 때 이동하게 해도 ㄱㅊ -->
             <p>A brief description of the Post</p>
         </article>
         <article>
             <h2 id="Liked">Most Liked</h2>
-            <img src="res/post3-2.jpeg" alt="Category3_Post2 Thumbnail">
+            <img src="res/post3-2.jpeg" alt="Category3_Post2 Thumbnail" width="500">
             <h3><a href="category3/post2.html">Title of the Post</a> </h3>
             <p>A brief description of the Post</p>
         </article>
@@ -122,7 +131,7 @@
         <h2>Explore Categories</h2>
         <ul>
             <li>
-                <a href="category1/category1_main.html">Category 1</a>
+                <a href="category1/category1_main.html">Paris</a>
             </li>
             <li>
                 <a href="category2/category2_main.html">Category 2</a>
