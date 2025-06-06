@@ -14,6 +14,7 @@
             margin-left: 1em;
             padding:0.3em 0.5em;
             transition: right 0.3s ease;
+             z-index: 1100;
         }
         #menu_button.active{
             right: 270px;
@@ -28,6 +29,7 @@
             padding: 1em;
             box-shadow: -2px 0 5px rgba(0,0,0,0.3);
             transition: right 0.3s ease;
+            z-index: 1100;
         }
         #categories.active {
             right: 0;
@@ -49,20 +51,54 @@
             position: fixed;
             top: 100px;
             left: 10px;
+            height: calc(100% - 100px);
+            overflow-y:auto;
+            background-color: #F9F9F9;
+            z-index: 900;
 
         }
         main {
-            display: block;
+            position: absolute;
+            top: 100px;
+            left: 280px;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
         }
         section {
-            margin-left: 280px;
-            margin-top : 38px;
+
             border: 2px solid #f2f2f2;
-            margin-right: 20px;
+
             padding: 30px;
-            background: #F9F9F9;
+            background-color: #F9F9F9
+
+
         }
 
+        body {
+            background-image: url('res/background1.jpg');
+
+        }
+        header{
+            position : fixed;
+            top : 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 2px solid #69F;
+             z-index: 1000;
+            /*background-color: white;*/
+
+        }
+         li a, p a{
+            text-decoration: none;
+            color: #69F;
+        }
+        li a:hover, p a:hover{
+            color: #C9F;
+        }
+        li a:active,p a:active{
+            color: #99C;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -82,37 +118,63 @@
 <body>
 <button id="menu_button" style="text-align: center;">☰</button>
 <header>
-    <h1 style="text-align: center;">
+    <h1 >
         <a href="home.html" style="text-decoration: none;">
-                <span style="border-radius: 5em;
+                <span style=" color: #69F; margin-left: 15px;"> <!--style="border-radius: 5em;
                 padding: 0.5em 1em;
                 background: #F9F9F9;
                 box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
                 color: #69F;
                 margin-left: 5px;
-                border: 2px dashed;">
-                    Cho&Kang's Blog ~.~
+                border: 2px dashed;"-->
+                    Blog
                 </span>
         </a>
     </h1>
+    <h2 style="position: absolute; left: 45%; top: 10%; color: #69F;;">
+        Cho&Kang's Trip
+    </h2>
 </header>
 <main>
     <section>
         <article>
-           <h2>More About Our Blog</h2>
+           <h2>About Us</h2>
+        </article>
+        <article>
+            <p>👋 안녕하세요! 저희 블로그에 방문해주셔서 감사합니다 😊</p>
+            <p>이 블로그는 Cho & Kang이 함께 운영하는 여행 기록 공간이에요.</p>
+            <p>25-해외 단기 파견 겸 유럽 여행을 다니며 찍은 사진들과 느꼈던 감정들, <br>그리고 여행 준비에 도움이 되는 정보들을 정리해서 나누는 곳이에요.</p>
+            <p>우리는 한양대 ERICA 캠퍼스에서 만난 친구로, <br>
+                여행을 함께 다니며 생긴 추억을 기록해보자는 마음으로 이 블로그를 시작했어요.</p>
+            <p>앞으로도 다양한 여행지 후기, 사진, 팁 등을 꾸준히 업로드할 예정이니 <br>
+                많은 관심 부탁드립니다!</p>
+            <p>-Cho & Kang</p>
+        </article>
+        <article>
+            <p>
+                <br><br>
+            </p>
+            <p>
+                📸 <strong>우리의 여행 사진이 궁금하다면?</strong>
+                <br>👉 <a href="https://www.instagram.com/yena_o.0?igsh=M3RlNTlnNTRxcW95" target="_blank">Instagram</a>
+            </p>
+            <p>
+                💻 <strong>블로그 개발기록이 궁금하다면?</strong>
+                <br>👉 <a href="https://github.com/yenaaaaaaaaaaaaaaa/web-publishing-blog" target="_blank">GitHub</a>
+            </p>
         </article>
     </section>
     <aside id="categories">
         <h2>Explore Categories</h2>
         <ul>
             <li>
-                <a href="category1/category1_main.html">Category 1</a>
+                <a href="category1/category1_main.html">Paris</a>
             </li>
             <li>
-                <a href="category2/category2_main.html">Category 2</a>
+                <a href="category2/category2_main.html">London</a>
             </li>
             <li>
-                <a href="category3/category3_main.html">Category 3</a>
+                <a href="category3/category3_main.html">Barcelona</a>
             </li>
         </ul>
         <h2>More About Our Blog</h2>
@@ -139,7 +201,7 @@
                         <span style="position: relative; top: -20px;">Cho&Kang</span>
                     </h3>
                     <h5 style="color: #9c9ca0; position: relative; top: -15px;">Cho&Kang@hanyang.ToT</h5>
-                    <p style="position: relative; top: -30px;">Hi~.~ <br>안농안농<br>성민아 오른쪽에 저 메뉴<br>그냥없앨까? 아님 그냥둘까?</p>
+                    <p style="position: relative; top: -30px;">쪼깡트립<br>25-하계 단기 파견 블로그</p>
                 </td>
             </tr>
             <tr>
@@ -159,8 +221,12 @@
                 </td>
             </tr>
             <tr>
-                <td style="background: #F9F9F9; position: relative; right: -20px;">
-                    <h3><a id="about" href="about.html">More About Our Blog</a></h3>
+                <td style="background: #F9F9F9;position: relative; right: -20px;">
+                    <h3 >
+                        More About Our Blog
+                    </h3>
+                    <li><a href="about.html">About Us</a></li>
+
                 </td>
             </tr>
             </tbody>

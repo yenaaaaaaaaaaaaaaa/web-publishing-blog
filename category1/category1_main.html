@@ -5,78 +5,111 @@
   <title>Home</title>
   <style>
     #menu_button{
-        position: fixed;
-        top: 5px;
-        right: 20px;
-        color: #333;
-        font-size: 1em;
-        cursor: pointer;
-        margin-left: 1em;
-        padding:0.3em 0.5em;
-        transition: right 0.3s ease;
-    }
-    #menu_button.active{
-        right: 270px;
-    }
-    #categories{
-        position: fixed;
-        top: 0;
-        right: -250px;
-        width: 230px;
-        height: 100%;
-        background: #f5f5f5;
-        padding: 1em;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.3);
-        transition: right 0.3s ease;
-    }
-    #categories.active {
-        right: 0;
-    }
-    h2{ 
-        color: #69F;
-        text-align: center;
-        border-bottom: 2px solid #69F; /* 하단 밑줄 장식 */
-    }
-    #about{
-         text-decoration: none;
-         color: #69F;
-    }
-    #about:hover{
-        color: #C9F;
-    }
-    #about:active{
-        color: #99C;
-    }
-    #left{
-        position: fixed;
-        top: 100px;
-        left: 10px;
+           position: fixed;
+           top: 5px;
+           right: 20px;
+           color: #333;
+           font-size: 1em;
+           cursor: pointer;
+           margin-left: 1em;
+           padding:0.3em 0.5em;
+           transition: right 0.3s ease;
+            z-index: 1100;
+       }
+       #menu_button.active{
+           right: 270px;
+       }
+       #categories{
+           position: fixed;
+           top: 0;
+           right: -250px;
+           width: 230px;
+           height: 100%;
+           background: #f5f5f5;
+           padding: 1em;
+           box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+           transition: right 0.3s ease;
+           z-index: 1100;
+       }
+       #categories.active {
+           right: 0;
+       }
 
-    }
-    main {
-        display: block;
-    }
-    section {
-        margin-left: 280px;
-        margin-top : 38px;
-        border: 2px solid #f2f2f2;
-        margin-right: 20px;
-        padding: 30px;
-        background: #F9F9F9;
-    }
-    .card {
-      width: 400px;
-      height: 350px;
-      border: 2px solid #f5f5f5;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-      background: white;
-      margin: 20px auto;
-      font-family: sans-serif;
-      color: inherit;
-}
+       #about{
+            text-decoration: none;
+            color: #69F;
+       }
+       #about:hover{
+           color: #C9F;
+       }
+       #about:active{
+           color: #99C;
+       }
+       #left{
+           position: fixed;
+           top: 100px;
+           left: 10px;
+           height: calc(100% - 100px);
+           overflow-y:auto;
+           background-color: #F9F9F9;
+           z-index: 900;
+
+       }
+       main {
+           position: absolute;
+           top: 100px;
+           left: 280px;
+           right: 0;
+           bottom: 0;
+           overflow-y: auto;
+       }
+       section {
+
+           border: 2px solid #f2f2f2;
+
+           padding: 30px;
+           background-color: #F9F9F9
+
+
+       }
+
+       body {
+           background-image: url('res/background1.jpg');
+
+       }
+       header{
+           position : fixed;
+           top : 0;
+           left: 0;
+           width: 100%;
+           border-bottom: 2px solid #69F;
+            z-index: 1000;
+           /*background-color: white;*/
+
+       }
+     .card {
+       width: 400px;
+       height: 350px;
+       border: 2px solid #f5f5f5;
+       overflow: hidden;
+       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+       display: flex;
+       flex-direction: column;
+       background: white;
+       margin: 20px auto;
+       font-family: sans-serif;
+       color: inherit;
+       }
+     li a{
+            text-decoration: none;
+            color: #69F;
+        }
+        li a:hover{
+            color: #C9F;
+        }
+        li a:active{
+            color: #99C;
+        }
 
 
   </style>
@@ -98,19 +131,22 @@
 <body>
 <button id="menu_button" style="text-align: center;">☰</button>
 <header>
-  <h1 style="text-align: center;">
+  <h1 >
     <a href="../home.html" style="text-decoration: none;">
-                <span style="border-radius: 5em;
+                <span style=" color: #69F; margin-left: 15px;"> <!--style="border-radius: 5em;
                 padding: 0.5em 1em;
                 background: #F9F9F9;
                 box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
                 color: #69F;
                 margin-left: 5px;
-                border: 2px dashed;">
-                    Cho&Kang's Blog ~.~
+                border: 2px dashed;"-->
+                    Blog
                 </span>
     </a>
   </h1>
+  <h2 style="position: absolute; left: 45%; top: 10%; color: #69F;;">
+    Cho&Kang's Trip
+  </h2>
 </header>
 <main>
   <section>
@@ -123,7 +159,7 @@
             <div class="card">
             <!-- 이미지 영역 -->
               <div style="flex: 1 1 auto; overflow: hidden;">
-              <img src="../res/paris1.jpg" alt="에펠탑" style="width: 100%; height: 100%; object-fit: cover;">
+              <img src="../res/post1-1.jpeg" alt="에펠탑" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
 
             <!-- 텍스트 영역 -->
@@ -175,7 +211,7 @@
             <span style="position: relative; top: -20px;">Cho&Kang</span>
           </h3>
           <h5 style="color: #9c9ca0; position: relative; top: -15px;">Cho&Kang@hanyang.ToT</h5>
-          <p style="position: relative; top: -30px;">Hi~.~ <br>안농안농<br>성민아 오른쪽에 저 메뉴<br>그냥없앨까? 아님 그냥둘까?</p>
+          <p style="position: relative; top: -30px;">쪼깡트립<br>25-하계 단기 파견 블로그</p>
         </td>
       </tr>
       <tr>
@@ -195,8 +231,12 @@
         </td>
       </tr>
       <tr>
-        <td style="background: #F9F9F9; position: relative; right: -20px;">
-          <h3><a id="about" href="../about.html">More About Our Blog</a></h3>
+        <td style="background: #F9F9F9;position: relative; right: -20px;">
+          <h3 >
+            More About Our Blog
+          </h3>
+          <li><a href="../about.html">About Us</a></li>
+
         </td>
       </tr>
       </tbody>
