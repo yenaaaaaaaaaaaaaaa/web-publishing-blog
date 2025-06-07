@@ -1,10 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <style>
+    #menu_button{
+           position: fixed;
+           top: 5px;
+           right: 20px;
+           color: #333;
+           font-size: 1em;
+           cursor: pointer;
+           margin-left: 1em;
+           padding:0.3em 0.5em;
+           transition: right 0.3s ease;
+            z-index: 1100;
+       }
+       #menu_button.active{
+           right: 270px;
+       }
+       #categories{
+           position: fixed;
+           top: 0;
+           right: -250px;
+           width: 230px;
+           height: 100%;
+           background: #f5f5f5;
+           padding: 1em;
+           box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+           transition: right 0.3s ease;
+           z-index: 1100;
+       }
+       #categories.active {
+           right: 0;
+       }
+
+       #about{
+            text-decoration: none;
+            color: #69F;
+       }
+       #about:hover{
+           color: #C9F;
+       }
+       #about:active{
+           color: #99C;
+       }
+       #left{
+           position: fixed;
+           top: 100px;
+           left: 10px;
+           height: calc(100% - 100px);
+           overflow-y:auto;
+           background-color: #F9F9F9;
+           z-index: 900;
+
+       }
+       main {
+           position: absolute;
+           top: 100px;
+           left: 280px;
+           right: 0;
+           bottom: 0;
+           overflow-y: auto;
+       }
+       section {
+
+           border: 2px solid #f2f2f2;
+
+           padding: 30px;
+           background-color: #F9F9F9
+
+
+       }
+
+       body {
+           background-image: url('res/background1.jpg');
+
+       }
+       header{
+           position : fixed;
+           top : 0;
+           left: 0;
+           width: 100%;
+           border-bottom: 2px solid #69F;
+            z-index: 1000;
+           /*background-color: white;*/
+
+       }
+     li a{
+            text-decoration: none;
+            color: #69F;
+        }
+        li a:hover{
+            color: #C9F;
+        }
+        li a:active{
+            color: #99C;
+        }
+
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const menuButton = document.getElementById('menu_button');
+        const categories = document.querySelector('#categories');
+        const moveButton = document.querySelector('#menu_button');
+
+        menuButton.addEventListener('click', () => {
+            categories.classList.toggle('active');
+            moveButton.classList.toggle('active');
+
+        });
+    });
+  </script>
 </head>
 <body>
+<button id="menu_button" style="text-align: center;">☰</button>
+<header>
+  <h1 >
+    <a href="../home.html" style="text-decoration: none;">
+                <span style=" color: #69F; margin-left: 15px;"> <!--style="border-radius: 5em;
+                padding: 0.5em 1em;
+                background: #F9F9F9;
+                box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
+                color: #69F;
+                margin-left: 5px;
+                border: 2px dashed;"-->
+                    Blog
+                </span>
+    </a>
+  </h1>
+  <h2 style="position: absolute; left: 45%; top: 10%; color: #69F;;">
+    Cho&Kang's Trip
+  </h2>
+</header>
+<main>
+    <section>
+        <h2>[루브르 박물관] 모나리자와 눈을 맞추다 – 루브르 박물관 여행기</h2>
 
+        <!-- 이미지 삽입 위치 -->
+        <img src="../res/post1-2.jpg" alt="루브르 박물관 외관 전경" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+        <p>
+            파리 중심에 위치한 루브르 박물관은 단순한 미술관을 넘어선, 예술 그 자체다. 웅장한 외관, 유리 피라미드로 상징되는 현대적 감각, 그리고 고대부터 근대까지 아우르는 방대한 컬렉션은 방문객들에게 시간 여행을 선사한다.<br><br>
+            특히, 세계에서 가장 유명한 회화 중 하나인 ‘모나리자’를 직접 마주하는 순간은 루브르 관람의 백미다. 작은 액자 안에 담긴 그녀의 미소는 생각보다 더 작고 조용하지만, 그 앞에 선 이들 모두의 시선을 단숨에 사로잡는다.
+        </p>
+
+        <!-- 이미지 삽입 위치 -->
+        <img src="../res/post1-2-2.jpg" alt="루브르 내부 전시장 모습" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+        <p>
+            루브르 박물관은 원래 12세기 요새였으며, 이후 왕궁으로 사용되다 18세기 프랑스 혁명 후 국민의 미술관으로 전환되었다. 현재는 약 35,000점 이상의 예술작품이 전시되어 있으며, 이집트 유물, 고대 그리스 조각, 르네상스 회화, 이슬람 미술 등 인류 문명의 다양한 흔적이 고스란히 보존되어 있다.<br><br>
+            내부는 3개의 주요 날개(리슐리외, 쉴리, 드농)로 구성되며, 각기 다른 시대와 지역의 예술을 대표한다. 미로처럼 이어진 전시실을 따라 걷다 보면 마치 문화의 강을 따라 흘러가는 듯한 기분이 든다.
+        </p>
+
+        <!-- 이미지 삽입 위치 -->
+        <img src="../res/post1-2-3.jpg" alt="모나리자 앞에 모인 관람객들" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+        <p>
+            ‘모나리자’는 드농관 1층, 이탈리아 회화 전시실의 유리벽 뒤에서 관람객들을 맞이한다. 수많은 이들이 그녀 앞에 몰려 사진을 찍고 감탄하며, 그 작은 작품에 숨겨진 미소와 눈빛을 해석하려 애쓴다. 어떤 이는 그녀의 눈동자가 자신을 따라온다고 말하고, 또 어떤 이는 레오나르도 다빈치의 천재성과 미스터리에 경외심을 느낀다.<br><br>
+            하지만 루브르는 단지 모나리자만의 공간이 아니다. 사모트라케의 니케, 밀로의 비너스, 나폴레옹의 대관식 같은 수많은 명작들이 전시되어 있으며, 각각의 작품은 수백 년의 이야기를 담고 있다.
+        </p>
+        <p>
+            관람을 효과적으로 하려면, 관심 있는 주제나 전시관을 중심으로 동선을 미리 계획하는 것이 좋다. 박물관 규모가 워낙 방대해 하루 만에 전부를 보기란 사실상 불가능하기 때문이다. 공식 웹사이트나 앱을 통해 제공되는 지도와 큐레이션 콘텐츠를 활용하면, 원하는 작품을 보다 집중적으로 감상할 수 있다.<br><br>
+            루브르 관람 후에는 유리 피라미드 광장에서 여유를 가져보자. 이곳은 고전과 현대가 조화를 이루는 상징적인 공간이며, 낮에도 아름답지만 특히 해질 무렵 조명이 켜진 모습은 파리 여행의 백미로 꼽힌다.
+        </p>
+        <p>
+            루브르 박물관은 예술에 대한 사랑, 인류 문명에 대한 존중, 그리고 시간을 초월한 감동을 느끼게 하는 공간이다. 모나리자와 눈을 맞추는 그 짧은 순간에도 수백 년의 이야기가 응축되어 있으며, 한 작품 앞에서 느껴지는 감정은 단순한 ‘관람’을 넘어선다.<br><br>
+            파리에 왔다면 루브르를 걷고, 예술과 역사의 시간 속을 함께 걸어보자. 그리고 그 안에서 단 한 작품이라도 당신의 마음에 남는 순간을 발견한다면, 그날의 여행은 완벽했을 것이다.
+        </p>
+    </section>
+
+  <aside id="categories">
+    <h2>Explore Categories</h2>
+    <ul>
+      <li>
+        <a href="../category1/category1_main.html">Paris</a>
+      </li>
+      <li>
+        <a href="../category2/category2_main.html">London</a>
+      </li>
+      <li>
+        <a href="../category3/category3_main.html">Barcelona</a>
+      </li>
+    </ul>
+    <h2>More About Our Blog</h2>
+    <ul>
+      <li>
+        <a href="../about.html">About Us</a>
+      </li>
+    </ul>
+  </aside>
+  <aside id="left">
+    <table style=" border: 2px solid #f2f2f2; margin: 5px; background: #F9F9F9;">
+      <thead>
+      <tr>
+        <th colspan="2" style=" border: 2px solid #7fabc7;background: #F9F9F9;">
+          <img src="../res/banner.jpeg" alt="banner" width="250px" height="auto">
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td colspan="2" style=" border: 2px solid #7fabc7; padding: 20px; background: #F9F9F9;">
+          <h3>
+            <img src="../res/profile.jpeg" alt="profile" width="50px" height="auto">
+            <span style="position: relative; top: -20px;">Cho&Kang</span>
+          </h3>
+          <h5 style="color: #9c9ca0; position: relative; top: -15px;">Cho&Kang@hanyang.ToT</h5>
+          <p style="position: relative; top: -30px;">쪼깡트립<br>25-하계 단기 파견 블로그</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background: #F9F9F9;">
+          <h3 style="position: relative; right: -20px;">Explore Posts You'll Love</h3>
+          <ul>
+            <li>
+              <a href="../category2/post1.html">Recommend</a>
+            </li>
+            <li>
+              <a href="../category1/post1.html">Recent Post</a>
+            </li>
+            <li>
+              <a href="../category3/post2.html">Most Liked</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="background: #F9F9F9;position: relative; right: -20px;">
+          <h3 >
+            More About Our Blog
+          </h3>
+          <li><a href="../about.html">About Us</a></li>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </aside>
+</main>
 </body>
 </html>

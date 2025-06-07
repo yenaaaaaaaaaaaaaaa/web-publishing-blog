@@ -1,138 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-    <style>
-        #menu_button{
-               position: fixed;
-               top: 5px;
-               right: 20px;
-               color: #333;
-               font-size: 1em;
-               cursor: pointer;
-               margin-left: 1em;
-               padding:0.3em 0.5em;
-               transition: right 0.3s ease;
-                z-index: 1100;
-           }
-           #menu_button.active{
-               right: 270px;
-           }
-           #categories{
-               position: fixed;
-               top: 0;
-               right: -250px;
-               width: 230px;
-               height: 100%;
-               background: #f5f5f5;
-               padding: 1em;
-               box-shadow: -2px 0 5px rgba(0,0,0,0.3);
-               transition: right 0.3s ease;
-               z-index: 1100;
-           }
-           #categories.active {
-               right: 0;
-           }
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <style>
+    #menu_button{
+           position: fixed;
+           top: 5px;
+           right: 20px;
+           color: #333;
+           font-size: 1em;
+           cursor: pointer;
+           margin-left: 1em;
+           padding:0.3em 0.5em;
+           transition: right 0.3s ease;
+            z-index: 1100;
+       }
+       #menu_button.active{
+           right: 270px;
+       }
+       #categories{
+           position: fixed;
+           top: 0;
+           right: -250px;
+           width: 230px;
+           height: 100%;
+           background: #f5f5f5;
+           padding: 1em;
+           box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+           transition: right 0.3s ease;
+           z-index: 1100;
+       }
+       #categories.active {
+           right: 0;
+       }
 
-           #about{
-                text-decoration: none;
-                color: #69F;
-           }
-           #about:hover{
-               color: #C9F;
-           }
-           #about:active{
-               color: #99C;
-           }
-           #left{
-               position: fixed;
-               top: 100px;
-               left: 10px;
-               height: calc(100% - 100px);
-               overflow-y:auto;
-               background-color: #F9F9F9;
-               z-index: 900;
+       #about{
+            text-decoration: none;
+            color: #69F;
+       }
+       #about:hover{
+           color: #C9F;
+       }
+       #about:active{
+           color: #99C;
+       }
+       #left{
+           position: fixed;
+           top: 100px;
+           left: 10px;
+           height: calc(100% - 100px);
+           overflow-y:auto;
+           background-color: #F9F9F9;
+           z-index: 900;
 
-           }
-           main {
-               position: absolute;
-               top: 100px;
-               left: 280px;
-               right: 0;
-               bottom: 0;
-               overflow-y: auto;
-           }
-           section {
+       }
+       main {
+           position: absolute;
+           top: 100px;
+           left: 280px;
+           right: 0;
+           bottom: 0;
+           overflow-y: auto;
+       }
+       section {
 
-               border: 2px solid #f2f2f2;
+           border: 2px solid #f2f2f2;
 
-               padding: 30px;
-               background-color: #F9F9F9
-
-
-           }
-
-           body {
-               background-image: url('res/background1.jpg');
-
-           }
-           header{
-               position : fixed;
-               top : 0;
-               left: 0;
-               width: 100%;
-               border-bottom: 2px solid #69F;
-                z-index: 1000;
-               /*background-color: white;*/
-
-           }
-         .card {
-           width: 400px;
-           height: 350px;
-           border: 2px solid #f5f5f5;
-           overflow: hidden;
-           box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-           display: flex;
-           flex-direction: column;
-           background: white;
-           margin: 20px auto;
-           font-family: sans-serif;
-           color: inherit;
-           }
-         li a{
-                text-decoration: none;
-                color: #69F;
-            }
-            li a:hover{
-                color: #C9F;
-            }
-            li a:active{
-                color: #99C;
-            }
+           padding: 30px;
+           background-color: #F9F9F9
 
 
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+       }
 
-            const menuButton = document.getElementById('menu_button');
-            const categories = document.querySelector('#categories');
-            const moveButton = document.querySelector('#menu_button');
+       body {
+           background-image: url('res/background1.jpg');
 
-            menuButton.addEventListener('click', () => {
-                categories.classList.toggle('active');
-                moveButton.classList.toggle('active');
+       }
+       header{
+           position : fixed;
+           top : 0;
+           left: 0;
+           width: 100%;
+           border-bottom: 2px solid #69F;
+            z-index: 1000;
+           /*background-color: white;*/
 
-            });
+       }
+     .card {
+       width: 400px;
+       height: 350px;
+       border: 2px solid #f5f5f5;
+       overflow: hidden;
+       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+       display: flex;
+       flex-direction: column;
+       background: white;
+       margin: 20px auto;
+       font-family: sans-serif;
+       color: inherit;
+       transition: transform 0.2s ease, box-shadow 0.2s ease;
+       }
+       .card-wrapper {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap; /* 화면 작아지면 줄 바꿈 허용 */
+      }
+      .card:hover {
+        transform: scale(1.03); /* 3% 확대 */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 강조 */
+      }
+      .card h5.title {
+        white-space: nowrap;         /* 줄바꿈 안함 */
+        overflow: hidden;            /* 넘친 부분 숨김 */
+        text-overflow: ellipsis;     /* ... 으로 표시 */
+      }
+     li a{
+            text-decoration: none;
+            color: #69F;
+        }
+        li a:hover{
+            color: #C9F;
+        }
+        li a:active{
+            color: #99C;
+        }
+
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const menuButton = document.getElementById('menu_button');
+        const categories = document.querySelector('#categories');
+        const moveButton = document.querySelector('#menu_button');
+
+        menuButton.addEventListener('click', () => {
+            categories.classList.toggle('active');
+            moveButton.classList.toggle('active');
+
         });
-    </script>
+    });
+  </script>
 </head>
 <body>
 <button id="menu_button" style="text-align: center;">☰</button>
 <header>
-    <h1 >
-        <a href="../home.html" style="text-decoration: none;">
+  <h1 >
+    <a href="../home.html" style="text-decoration: none;">
                 <span style=" color: #69F; margin-left: 15px;"> <!--style="border-radius: 5em;
                 padding: 0.5em 1em;
                 background: #F9F9F9;
@@ -142,113 +158,153 @@
                 border: 2px dashed;"-->
                     Blog
                 </span>
-        </a>
-    </h1>
-    <h2 style="position: absolute; left: 45%; top: 10%; color: #69F;;">
-        Cho&Kang's Trip
-    </h2>
+    </a>
+  </h1>
+  <h2 style="position: absolute; left: 45%; top: 10%; color: #69F;;">
+    Cho&Kang's Trip
+  </h2>
 </header>
 <main>
-    <section>
-        <article>
-            <h2>Barcelona</h2>
-            <article>
-                <h3>1. 에펠탑</h3>
-                <p>파리의 상징, 낮과 밤이 모두 아름다운 장소이다.</p>
-                <a href="post1.html" style="text-decoration: none;">
-                    <div class="card">
-                        <!-- 이미지 영역 -->
-                        <div style="flex: 1 1 auto; overflow: hidden;">
-                            <img src="../res/post1-1.jpeg" alt="에펠탑" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
+  <section>
+    <article>
+       <article>
+      <h2>Barcelona</h2>
+      <div class="card-wrapper">
+      <article>
+          <a href="post1.html" style="text-decoration: none;">
+            <div class="card">
+            <!-- 이미지 영역 -->
+              <div style="flex: 1 1 auto; overflow: hidden;">
+              <img src="../res/post1-1.jpeg" alt="에펠탑" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
 
-                        <!-- 텍스트 영역 -->
-                        <div style="flex: 0 0 40px; padding: 15px;">
-                            <h5 style="color: #080808; line-height: 0.2;">[파리 여행 DAY 1] 에펠탑, 기대 이상이었던 순간</h5>
-                            <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.8em; margin: 0;">
-                                파리의 상징, 에펠탑은 낮에도 멋지지만 밤에 조명이 켜지면 더욱 황홀하다.
-                            </h5>
-                        </div>
-                    </div>
-                </a>
-            </article>
-        </article>
-    </section>
-    <aside id="categories">
-        <h2>Explore Categories</h2>
-        <ul>
-            <li>
-                <a href="../category1/category1_main.html">Paris</a>
-            </li>
-            <li>
-                <a href="../category2/category2_main.html">London</a>
-            </li>
-            <li>
-                <a href="../category3/category3_main.html">Barcelona</a>
-            </li>
-        </ul>
-        <h2>More About Our Blog</h2>
-        <ul>
-            <li>
-                <a href="../about.html">About Us</a>
-            </li>
-        </ul>
-    </aside>
-    <aside id="left">
-        <table style=" border: 2px solid #f2f2f2; margin: 5px; background: #F9F9F9;">
-            <thead>
-            <tr>
-                <th colspan="2" style=" border: 2px solid #7fabc7;background: #F9F9F9;">
-                    <img src="../res/banner.jpeg" alt="banner" width="250px" height="auto">
-                </th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td colspan="2" style=" border: 2px solid #7fabc7; padding: 20px; background: #F9F9F9;">
-                    <h3>
-                        <img src="../res/profile.jpeg" alt="profile" width="50px" height="auto">
-                        <span style="position: relative; top: -20px;">Cho&Kang</span>
-                    </h3>
-                    <h5 style="color: #9c9ca0; position: relative; top: -15px;">Cho&Kang@hanyang.ToT</h5>
-                    <p style="position: relative; top: -30px;">쪼깡트립<br>25-하계 단기 파견 블로그</p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" style="background: #F9F9F9;">
-                    <h3 style="position: relative; right: -20px;">Explore Posts You'll Love</h3>
-                    <ul>
-                        <li>
-                            <a href="../category2/post1.html">Recommend</a>
-                        </li>
-                        <li>
-                            <a href="../category1/post1.html">Recent Post</a>
-                        </li>
-                        <li>
-                            <a href="../category3/post2.html">Most Liked</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td style="background: #F9F9F9;position: relative; right: -20px;">
-                    <h3 >
-                        More About Our Blog
-                    </h3>
-                    <li><a href="../about.html">About Us</a></li>
+            <!-- 텍스트 영역 -->
+              <div style="flex: 0 0 40px; padding: 15px;">
+              <h5 class="title" style="color: #080808; line-height: 1.2;">[에펠탑] 파리의 심장, 에펠탑에서 바라본 낭만적인 도시 풍경</h5>
+              <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.8em; margin: 0;">
+              세계적인 랜드마크 에펠탑에서 파리 시내 전경을 내려다보며 프랑스의 낭만을 만끽해보세요.
+              </h5>
+              </div>
+            </div>
+          </a>
+      </article>
+      
+      <article>
+          <a href="post1.html" style="text-decoration: none;">
+            <div class="card">
+            <!-- 이미지 영역 -->
+              <div style="flex: 1 1 auto; overflow: hidden;">
+              <img src="../res/post1-2.jpg" alt="루브르박물관" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
 
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </aside>
+            <!-- 텍스트 영역 -->
+              <div style="flex: 0 0 40px; padding: 15px;">
+              <h5 class="title" style="color: #080808; line-height: 1.2;">[루브르 박물관] 모나리자와 눈을 맞추다 – 루브르 박물관 여행기</h5>
+              <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.8em; margin: 0;">
+              예술의 보고 루브르에서 고대 유물부터 현대미술까지, 시간을 초월한 작품들과의 만남이 펼쳐집니다.
+              </h5>
+              </div>
+            </div>
+          </a>
+      </article>
+
+      <article>
+          <a href="post1.html" style="text-decoration: none;">
+            <div class="card">
+            <!-- 이미지 영역 -->
+              <div style="flex: 1 1 auto; overflow: hidden;">
+              <img src="../res/post1-3.jpg" alt="몽마르트 언덕과 사크레쾨르 대성당" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+            <!-- 텍스트 영역 -->
+              <div style="flex: 0 0 40px; padding: 15px;">
+              <h5 class="title" style="color: #080808; line-height: 1.2;">[몽마르트 언덕과 사크레쾨르 대성당] 예술가들의 언덕, 몽마르트에서 만난 파리의 감성</h5>
+              <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.8em; margin: 0;">
+              과거의 화가들과 시인들이 사랑한 언덕에서, 파리의 진짜 얼굴을 마주하게 됩니다.
+              </h5>
+              </div>
+            </div>
+          </a>
+      </article>
+      </div>
+
+    </article>
+  </section>
+  <aside id="categories">
+    <h2>Explore Categories</h2>
+    <ul>
+      <li>
+        <a href="../category1/category1_main.html">Paris</a>
+      </li>
+      <li>
+        <a href="../category2/category2_main.html">London</a>
+      </li>
+      <li>
+        <a href="../category3/category3_main.html">Barcelona</a>
+      </li>
+    </ul>
+    <h2>More About Our Blog</h2>
+    <ul>
+      <li>
+        <a href="../about.html">About Us</a>
+      </li>
+    </ul>
+  </aside>
+  <aside id="left">
+    <table style=" border: 2px solid #f2f2f2; margin: 5px; background: #F9F9F9;">
+      <thead>
+      <tr>
+        <th colspan="2" style=" border: 2px solid #7fabc7;background: #F9F9F9;">
+          <img src="../res/banner.jpeg" alt="banner" width="250px" height="auto">
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td colspan="2" style=" border: 2px solid #7fabc7; padding: 20px; background: #F9F9F9;">
+          <h3>
+            <img src="../res/profile.jpeg" alt="profile" width="50px" height="auto">
+            <span style="position: relative; top: -20px;">Cho&Kang</span>
+          </h3>
+          <h5 style="color: #9c9ca0; position: relative; top: -15px;">Cho&Kang@hanyang.ToT</h5>
+          <p style="position: relative; top: -30px;">쪼깡트립<br>25-하계 단기 파견 블로그</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background: #F9F9F9;">
+          <h3 style="position: relative; right: -20px;">Explore Posts You'll Love</h3>
+          <ul>
+            <li>
+              <a href="../category2/post1.html">Recommend</a>
+            </li>
+            <li>
+              <a href="../category1/post1.html">Recent Post</a>
+            </li>
+            <li>
+              <a href="../category3/post2.html">Most Liked</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="background: #F9F9F9;position: relative; right: -20px;">
+          <h3 >
+            More About Our Blog
+          </h3>
+          <li><a href="../about.html">About Us</a></li>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </aside>
 </main>
 <footer>
-    <!--
-        <p>
-            <a href="#">Instagram</a>
-            <a href="#">GitHub</a>
-        </p> -->
+  <!--
+      <p>
+          <a href="#">Instagram</a>
+          <a href="#">GitHub</a>
+      </p> -->
 </footer>
 </body>
 </html>

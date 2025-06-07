@@ -1,10 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <style>
+    #menu_button{
+           position: fixed;
+           top: 5px;
+           right: 20px;
+           color: #333;
+           font-size: 1em;
+           cursor: pointer;
+           margin-left: 1em;
+           padding:0.3em 0.5em;
+           transition: right 0.3s ease;
+            z-index: 1100;
+       }
+       #menu_button.active{
+           right: 270px;
+       }
+       #categories{
+           position: fixed;
+           top: 0;
+           right: -250px;
+           width: 230px;
+           height: 100%;
+           background: #f5f5f5;
+           padding: 1em;
+           box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+           transition: right 0.3s ease;
+           z-index: 1100;
+       }
+       #categories.active {
+           right: 0;
+       }
+
+       #about{
+            text-decoration: none;
+            color: #69F;
+       }
+       #about:hover{
+           color: #C9F;
+       }
+       #about:active{
+           color: #99C;
+       }
+       #left{
+           position: fixed;
+           top: 100px;
+           left: 10px;
+           height: calc(100% - 100px);
+           overflow-y:auto;
+           background-color: #F9F9F9;
+           z-index: 900;
+
+       }
+       main {
+           position: absolute;
+           top: 100px;
+           left: 280px;
+           right: 0;
+           bottom: 0;
+           overflow-y: auto;
+       }
+       section {
+
+           border: 2px solid #f2f2f2;
+
+           padding: 30px;
+           background-color: #F9F9F9
+
+
+       }
+
+       body {
+           background-image: url('res/background1.jpg');
+
+       }
+       header{
+           position : fixed;
+           top : 0;
+           left: 0;
+           width: 100%;
+           border-bottom: 2px solid #69F;
+            z-index: 1000;
+           /*background-color: white;*/
+
+       }
+
+     li a{
+            text-decoration: none;
+            color: #69F;
+        }
+        li a:hover{
+            color: #C9F;
+        }
+        li a:active{
+            color: #99C;
+        }
+
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const menuButton = document.getElementById('menu_button');
+        const categories = document.querySelector('#categories');
+        const moveButton = document.querySelector('#menu_button');
+
+        menuButton.addEventListener('click', () => {
+            categories.classList.toggle('active');
+            moveButton.classList.toggle('active');
+
+        });
+    });
+  </script>
 </head>
 <body>
-    <h2>에펠탑 설명</h2>
+<button id="menu_button" style="text-align: center;">☰</button>
+<header>
+  <h1 >
+    <a href="../home.html" style="text-decoration: none;">
+                <span style=" color: #69F; margin-left: 15px;"> <!--style="border-radius: 5em;
+                padding: 0.5em 1em;
+                background: #F9F9F9;
+                box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
+                color: #69F;
+                margin-left: 5px;
+                border: 2px dashed;"-->
+                    Blog
+                </span>
+    </a>
+  </h1>
+  <h2 style="position: absolute; left: 45%; top: 10%; color: #69F;;">
+    Cho&Kang's Trip
+  </h2>
+</header>
+<main>
+  <section>
+    <h2>[에펠탑] 파리의 심장, 에펠탑에서 바라본 낭만적인 도시 풍경</h2>
+
+    <!-- 이미지 삽입 위치 -->
+    <img src="../res/post1-1.jpeg" alt="에펠탑 전체가 보이는 전경" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+    <p>
+        파리의 하늘 아래, 세느강이 유유히 흐르고 도시의 섬세한 건축물들이 수평선을 따라 이어지는 그 풍경 한가운데, 마치 시인의 붓끝처럼 우아하게 솟아오른 철의 탑이 있다. 바로 에펠탑. <br><br>
+        단순한 금속의 조형물로 보일 수도 있지만, 그것은 단연코 파리의 심장이자, 프랑스가 세계에 자부심을 담아 내세우는 상징적인 존재이다. 날카로우면서도 부드러운 곡선, 구조적인 아름다움 속에 낭만이 깃들어 있으며, 누구나 그 아래에 서는 순간, 시간이 천천히 흐르고 있다는 착각에 빠지게 된다.
+    </p>
+
+    <!-- 이미지 삽입 위치 -->
+    <img src="../res/post1-1-2.png" alt="구스타브 에펠과 당시 공사 모습" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+    <p>
+    에펠탑은 1889년 프랑스 혁명 100주년을 기념해 열린 파리 만국박람회를 위해 건설되었다. 당시 프랑스 정부는 산업화와 기술력을 과시할 구조물을 원했고, 건축가 구스타브 에펠이 이끄는 팀이 설계한 철탑이 선정되었다. 높이 약 330m에 달하는 이 탑은 당시 세계에서 가장 높은 구조물이었고, 현대 철골 구조물의 가능성을 증명하는 상징적인 프로젝트였다.<br><br>
+    흥미롭게도 건설 초기에는 많은 반대가 있었다. 파리의 지식인들과 예술가들은 이 철의 구조물이 도심 미관을 해친다고 비판했고, ‘흉물’이라 부르기도 했다. 하지만 이러한 반대에도 불구하고 에펠은 자신의 이름을 걸고 공사를 강행했고, 탑은 2년 2개월 만에 완공되었다. 그 결과, 에펠탑은 오늘날까지도 프랑스 국민과 전 세계인의 사랑을 받는 랜드마크가 되었다.
+    </p>
+
+    <p>
+    에펠탑은 총 세 개의 전망대로 구성되어 있으며, 각각의 전망대에서는 파리 시내 전경을 다른 시각에서 조망할 수 있다. 첫 번째와 두 번째 전망대는 엘리베이터 혹은 계단을 통해 오를 수 있고, 세 번째 전망대는 유료 엘리베이터를 통해서만 접근이 가능하다. 특히 해 질 무렵, 가장 꼭대기에서 바라보는 파리는 황금빛으로 물든 도시 전체가 하나의 예술 작품처럼 느껴진다.<br><br>
+    밤이 되면 에펠탑은 또 다른 얼굴을 드러낸다. 수천 개의 조명이 켜지며 매 시간 정각마다 반짝이는 라이트 쇼를 선보인다. 이 빛의 향연은 파리 여행 중 가장 기억에 남는 순간 중 하나로 손꼽히며, 많은 이들이 조명이 켜지는 순간을 사진에 담기 위해 탑 아래 광장에서 대기한다.
+    </p>
+
+    <!-- 이미지 삽입 위치 -->
+    <img src="../res/post1-1-1.jpg" alt="야경 속 에펠탑" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+    <p>
+    에펠탑은 단지 보는 것에서 그치지 않는다. 탑 안에는 프랑스 요리를 맛볼 수 있는 레스토랑 ‘르 줄 베른(Le Jules Verne)’이 있으며, 각 전망대에는 파리 관련 기념품 샵도 운영되고 있다. 탑 아래에 펼쳐진 샹 드 마르 공원이나 트로카데로 광장에서 휴식을 취하거나, 세느강 유람선과 함께 관광 코스를 구성해도 훌륭한 하루 일정이 된다. <br><br>
+    방문 팁을 주자면, 에펠탑은 성수기엔 대기 시간이 길기 때문에 온라인 사전 예약이 매우 중요하다. 특히 일몰 시간대나 야경을 보기 위해 많은 사람들이 몰리므로, 미리 입장권을 구매하고 여유 있게 움직이는 것이 좋다. 또한, 계단으로 오르면 색다른 체험과 함께 보다 생생한 탑의 구조를 느낄 수 있다.
+    </p>
+
+    <p>
+    파리를 찾은 여행자라면 누구나 에펠탑을 향해 걷게 된다. 그곳은 낭만의 정점이자, 역사의 현장이며, 현재의 파리를 가장 강렬하게 체감할 수 있는 장소다. 탑 아래에서 커피를 마시며 여유를 즐기는 사람들, 연인의 손을 잡고 조명을 바라보는 이들, 그리고 셔터를 누르는 손끝의 떨림 속에 에펠탑은 수많은 기억을 남긴다. <br><br>
+    에펠탑은 더 이상 철강과 볼트로만 이루어진 구조물이 아니다. 그것은 누군가에게는 첫 여행의 시작이고, 누군가에게는 인생의 전환점이 된 공간이며, 또 누군가에게는 프랑스의 품격을 처음으로 마주한 순간이기도 하다.<br><br>
+    파리에 왔다면 반드시 들러야 할 명소, 에펠탑. 그저 사진 한 장 찍고 끝나는 장소가 아니라, 파리라는 도시의 역사와 아름다움을 몸소 느낄 수 있는 상징적인 공간입니다. 에펠탑 아래에서 바라본 하늘, 위에서 내려다본 파리 시내, 그리고 탑 자체의 아름다움은 오래도록 기억에 남을 것입니다.
+    </p>
+
+  </section>
+  <aside id="categories">
+    <h2>Explore Categories</h2>
+    <ul>
+      <li>
+        <a href="../category1/category1_main.html">Paris</a>
+      </li>
+      <li>
+        <a href="../category2/category2_main.html">London</a>
+      </li>
+      <li>
+        <a href="../category3/category3_main.html">Barcelona</a>
+      </li>
+    </ul>
+    <h2>More About Our Blog</h2>
+    <ul>
+      <li>
+        <a href="../about.html">About Us</a>
+      </li>
+    </ul>
+  </aside>
+  <aside id="left">
+    <table style=" border: 2px solid #f2f2f2; margin: 5px; background: #F9F9F9;">
+      <thead>
+      <tr>
+        <th colspan="2" style=" border: 2px solid #7fabc7;background: #F9F9F9;">
+          <img src="../res/banner.jpeg" alt="banner" width="250px" height="auto">
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td colspan="2" style=" border: 2px solid #7fabc7; padding: 20px; background: #F9F9F9;">
+          <h3>
+            <img src="../res/profile.jpeg" alt="profile" width="50px" height="auto">
+            <span style="position: relative; top: -20px;">Cho&Kang</span>
+          </h3>
+          <h5 style="color: #9c9ca0; position: relative; top: -15px;">Cho&Kang@hanyang.ToT</h5>
+          <p style="position: relative; top: -30px;">쪼깡트립<br>25-하계 단기 파견 블로그</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background: #F9F9F9;">
+          <h3 style="position: relative; right: -20px;">Explore Posts You'll Love</h3>
+          <ul>
+            <li>
+              <a href="../category2/post1.html">Recommend</a>
+            </li>
+            <li>
+              <a href="../category1/post1.html">Recent Post</a>
+            </li>
+            <li>
+              <a href="../category3/post2.html">Most Liked</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="background: #F9F9F9;position: relative; right: -20px;">
+          <h3 >
+            More About Our Blog
+          </h3>
+          <li><a href="../about.html">About Us</a></li>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </aside>
+</main>
 </body>
 </html>
