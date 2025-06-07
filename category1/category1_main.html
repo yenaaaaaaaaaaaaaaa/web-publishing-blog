@@ -99,7 +99,23 @@
        margin: 20px auto;
        font-family: sans-serif;
        color: inherit;
+       transition: transform 0.2s ease, box-shadow 0.2s ease;
        }
+       .card-wrapper {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap; /* 화면 작아지면 줄 바꿈 허용 */
+      }
+      .card:hover {
+        transform: scale(1.03); /* 3% 확대 */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 그림자 강조 */
+      }
+      .card h5.title {
+        white-space: nowrap;         /* 줄바꿈 안함 */
+        overflow: hidden;            /* 넘친 부분 숨김 */
+        text-overflow: ellipsis;     /* ... 으로 표시 */
+      }
      li a{
             text-decoration: none;
             color: #69F;
@@ -151,7 +167,9 @@
 <main>
   <section>
     <article>
+       <article>
       <h2>Paris</h2>
+      <div class="card-wrapper">
       <article>
           <a href="post1.html" style="text-decoration: none;">
             <div class="card">
@@ -162,7 +180,45 @@
 
             <!-- 텍스트 영역 -->
               <div style="flex: 0 0 40px; padding: 15px;">
-              <h5 style="color: #080808; line-height: 0.2;">[파리 여행 DAY 1] 에펠탑, 기대 이상이었던 순간</h5>
+              <h5 class="title" style="color: #080808; line-height: 1.2;">[에펠탑] 파리의 심장, 에펠탑에서 바라본 낭만적인 도시 풍경</h5>
+              <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.8em; margin: 0;">
+              세계적인 랜드마크 에펠탑에서 파리 시내 전경을 내려다보며 프랑스의 낭만을 만끽해보세요.
+              </h5>
+              </div>
+            </div>
+          </a>
+      </article>
+      
+      <article>
+          <a href="post1.html" style="text-decoration: none;">
+            <div class="card">
+            <!-- 이미지 영역 -->
+              <div style="flex: 1 1 auto; overflow: hidden;">
+              <img src="../res/post1-2.jpg" alt="루브르박물관" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+            <!-- 텍스트 영역 -->
+              <div style="flex: 0 0 40px; padding: 15px;">
+              <h5 class="title" style="color: #080808; line-height: 1.2;">[루브르 박물관] 모나리자와 눈을 맞추다 – 루브르 박물관 여행기</h5>
+              <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.8em; margin: 0;">
+              예술의 보고 루브르에서 고대 유물부터 현대미술까지, 시간을 초월한 작품들과의 만남이 펼쳐집니다.
+              </h5>
+              </div>
+            </div>
+          </a>
+      </article>
+
+      <article>
+          <a href="post1.html" style="text-decoration: none;">
+            <div class="card">
+            <!-- 이미지 영역 -->
+              <div style="flex: 1 1 auto; overflow: hidden;">
+              <img src="../res/post1-3.jpg" alt="몽마르트 언덕과 사크레쾨르 대성당" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+
+            <!-- 텍스트 영역 -->
+              <div style="flex: 0 0 40px; padding: 15px;">
+              <h5 class="title" style="color: #080808; line-height: 1.2;">[몽마르트 언덕과 사크레쾨르 대성당] 예술가들의 언덕, 몽마르트에서 만난 파리의 감성</h5>
               <h5 style="color: #9c9ca0; font-weight: normal; font-size: 0.8em; margin: 0;">
               과거의 화가들과 시인들이 사랑한 언덕에서, 파리의 진짜 얼굴을 마주하게 됩니다.
               </h5>
