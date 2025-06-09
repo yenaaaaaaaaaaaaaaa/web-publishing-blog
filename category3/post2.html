@@ -1,10 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <style>
+    #menu_button{
+           position: fixed;
+           top: 5px;
+           right: 20px;
+           color: #333;
+           font-size: 1em;
+           cursor: pointer;
+           margin-left: 1em;
+           padding:0.3em 0.5em;
+           transition: right 0.3s ease;
+            z-index: 1100;
+       }
+       #menu_button.active{
+           right: 270px;
+       }
+       #categories{
+           position: fixed;
+           top: 0;
+           right: -250px;
+           width: 230px;
+           height: 100%;
+           background: #f5f5f5;
+           padding: 1em;
+           box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+           transition: right 0.3s ease;
+           z-index: 1100;
+       }
+       #categories.active {
+           right: 0;
+       }
+
+       #about{
+            text-decoration: none;
+            color: #69F;
+       }
+       #about:hover{
+           color: #C9F;
+       }
+       #about:active{
+           color: #99C;
+       }
+       #left{
+           position: fixed;
+           top: 100px;
+           left: 10px;
+           height: calc(100% - 100px);
+           overflow-y:auto;
+           background-color: #F9F9F9;
+           z-index: 900;
+
+       }
+       main {
+           position: absolute;
+           top: 100px;
+           left: 280px;
+           right: 0;
+           bottom: 0;
+           overflow-y: auto;
+       }
+       section {
+
+           border: 2px solid #f2f2f2;
+
+           padding: 30px;
+           background-color: #F9F9F9
+
+
+       }
+
+       body {
+           background-image: url('res/background1.jpg');
+
+       }
+       header{
+           position : fixed;
+           top : 0;
+           left: 0;
+           width: 100%;
+           border-bottom: 2px solid #69F;
+            z-index: 1000;
+           /*background-color: white;*/
+
+       }
+
+     li a{
+            text-decoration: none;
+            color: #69F;
+        }
+        li a:hover{
+            color: #C9F;
+        }
+        li a:active{
+            color: #99C;
+        }
+
+
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const menuButton = document.getElementById('menu_button');
+        const categories = document.querySelector('#categories');
+        const moveButton = document.querySelector('#menu_button');
+
+        menuButton.addEventListener('click', () => {
+            categories.classList.toggle('active');
+            moveButton.classList.toggle('active');
+
+        });
+    });
+  </script>
 </head>
 <body>
+<button id="menu_button" style="text-align: center;">☰</button>
+<header>
+  <h1 >
+    <a href="../home.html" style="text-decoration: none;">
+                <span style=" color: #69F; margin-left: 15px;"> <!--style="border-radius: 5em;
+                padding: 0.5em 1em;
+                background: #F9F9F9;
+                box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
+                color: #69F;
+                margin-left: 5px;
+                border: 2px dashed;"-->
+                    Blog
+                </span>
+    </a>
+  </h1>
+  <h2 style="position: absolute; left: 45%; top: 10%; color: #69F;;">
+    Cho&Kang's Trip
+  </h2>
+</header>
+<main>
+  <section>
+    <h2>[구엘 공원] 가우디의 자연 속 예술 정원</h2>
 
+    <!-- 이미지 삽입 위치 -->
+    <img src="../res/post3-2.jpg" alt="구엘 공원 입구와 계단" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+    <p>
+    바르셀로나 북쪽 언덕에 위치한 **구엘 공원(Park Güell)**은 단순한 공원이 아니다. 그곳은 건축가 안토니 가우디가 자연과 예술의 경계를 허문 실험의 무대이자, 상상력의 집합체다. 언덕을 따라 펼쳐진 곡선의 길, 형형색색의 모자이크, 동화 속 궁전을 닮은 건축물들이 어우러지며 방문객들을 환상의 세계로 이끈다.<br><br>
+    이 공원은 원래 주거용 고급 단지를 목적으로 조성되었지만, 상업적으로 실패하면서 도시 공원으로 바뀌게 되었다. 그러나 그 결과 우리는 오늘날 바르셀로나 시민과 전 세계 여행자들이 자유롭게 드나드는, 살아 있는 예술 정원을 경험할 수 있게 된 것이다.
+    </p>
+
+    <!-- 이미지 삽입 위치 -->
+    <img src="../res/post3-2-2.jpeg" alt="모자이크 벤치와 전망대에서 본 바르셀로나 전경" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+    <p>
+    구엘 공원의 상징은 단연 **모자이크 벤치와 도마뱀 분수**다. 입구 중앙 계단을 따라 올라가면 형형색색의 도마뱀 조각 ‘엘 드락(el drac)’이 방문객을 맞이하고, 그 위로는 광장처럼 펼쳐진 모자이크 타일 벤치가 이어진다. 이 벤치는 세계에서 가장 긴 연속 벤치로 알려져 있으며, 곡선 형태는 사람의 등을 감싸듯 설계되어 앉는 순간 편안함을 느낄 수 있다.<br><br>
+    광장에서 바라보는 바르셀로나 시내 풍경도 압권이다. 바다와 도시, 사그라다 파밀리아까지 한눈에 들어오며, 많은 이들이 이곳에서 사진을 남기고 긴 시간을 머문다. 벤치의 타일들은 햇빛에 따라 색이 바뀌며, 가우디 특유의 밝고 생동감 있는 미학이 오롯이 드러난다.
+    </p>
+
+    <p>
+    구엘 공원은 어디를 걷든 곡선과 기하학, 자연과 건축이 끊임없이 대화를 나눈다. 가우디는 "자연에는 직선이 없다"고 말하며 곡선을 즐겨 사용했는데, 이 철학은 구엘 공원의 지붕, 기둥, 통로 구석구석에서 확인할 수 있다. 특히 ‘도리아 회랑’으로 불리는 기둥 회랑은 언덕의 지형을 그대로 따라 조성되어, 인공과 자연의 경계를 허문 대표적인 구조물이다.<br><br>
+    공원 내에는 가우디가 실제로 거주했던 **가우디 하우스 박물관**도 있다. 그의 생활 공간과 가구, 설계 도면이 전시되어 있으며, 이를 통해 그의 사고방식과 예술 세계를 조금 더 가까이서 이해할 수 있다.
+    </p>
+
+    <!-- 이미지 삽입 위치 -->
+    <img src="../res/post3-2-3.jpg" alt="도리아 회랑 기둥과 자연 지형을 따라 이어진 구조물" style="width:60%; max-width:500px; display:block; margin:20px auto; border:2px solid #ccc;">
+
+    <p>
+    구엘 공원은 단순히 아름답기만 한 장소가 아니다. 그것은 방문자에게 영감을 주는 공간이며, 창조와 자연에 대한 예술적 해석이 녹아 있는 열린 박물관이다. 수많은 관광지들이 단순한 ‘사진 명소’에 그치는 반면, 이곳은 걸을수록 생각하게 만들고, 머무를수록 마음이 가벼워지는 경험을 선사한다.<br><br>
+    성수기에는 입장 인원이 제한되므로 온라인 예약이 필수고, 조용한 아침 시간대에 방문하면 더 깊이 있게 감상할 수 있다. 구엘 공원은 일부 구역만 유료이며, 나머지 자연 공간은 자유롭게 산책할 수 있어 지역 주민들에게도 사랑받는 쉼터 역할을 한다.
+    </p>
+
+    <p>
+    바르셀로나의 언덕 위, 도시와 자연, 예술이 어우러진 구엘 공원에서의 시간은 단순한 관광을 넘어서는 감동이다. 가우디의 철학과 자연을 향한 경외, 그리고 바르셀로나 특유의 자유로운 공기가 조화를 이루며, 여행자의 발걸음을 천천히, 그러나 깊이 있게 이끈다.
+    </p>
+
+  </section>
+  <aside id="categories">
+    <h2>Explore Categories</h2>
+    <ul>
+      <li>
+        <a href="../category1/category1_main.html">Paris</a>
+      </li>
+      <li>
+        <a href="../category2/category2_main.html">London</a>
+      </li>
+      <li>
+        <a href="../category3/category3_main.html">Barcelona</a>
+      </li>
+    </ul>
+    <h2>More About Our Blog</h2>
+    <ul>
+      <li>
+        <a href="../about.html">About Us</a>
+      </li>
+    </ul>
+  </aside>
+  <aside id="left">
+    <table style=" border: 2px solid #f2f2f2; margin: 5px; background: #F9F9F9;">
+      <thead>
+      <tr>
+        <th colspan="2" style=" border: 2px solid #7fabc7;background: #F9F9F9;">
+          <img src="../res/banner.jpeg" alt="banner" width="250px" height="auto">
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td colspan="2" style=" border: 2px solid #7fabc7; padding: 20px; background: #F9F9F9;">
+          <h3>
+            <img src="../res/profile.jpeg" alt="profile" width="50px" height="auto">
+            <span style="position: relative; top: -20px;">Cho&Kang</span>
+          </h3>
+          <h5 style="color: #9c9ca0; position: relative; top: -15px;">Cho&Kang@hanyang.ToT</h5>
+          <p style="position: relative; top: -30px;">쪼깡트립<br>25-하계 단기 파견 블로그</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="background: #F9F9F9;">
+          <h3 style="position: relative; right: -20px;">Explore Posts You'll Love</h3>
+          <ul>
+            <li>
+              <a href="../category2/post1.html">Recommend</a>
+            </li>
+            <li>
+              <a href="../category1/post1.html">Recent Post</a>
+            </li>
+            <li>
+              <a href="../category3/post2.html">Most Liked</a>
+            </li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td style="background: #F9F9F9;position: relative; right: -20px;">
+          <h3 >
+            More About Our Blog
+          </h3>
+          <li><a href="../about.html">About Us</a></li>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </aside>
+</main>
 </body>
 </html>
