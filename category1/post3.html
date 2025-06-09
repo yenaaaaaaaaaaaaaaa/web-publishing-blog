@@ -4,99 +4,108 @@
   <meta charset="UTF-8">
   <title>Home</title>
   <style>
-    #menu_button{
-           position: fixed;
-           top: 5px;
-           right: 20px;
-           color: #333;
-           font-size: 1em;
-           cursor: pointer;
-           margin-left: 1em;
-           padding:0.3em 0.5em;
-           transition: right 0.3s ease;
-            z-index: 1100;
-       }
-       #menu_button.active{
-           right: 270px;
-       }
-       #categories{
-           position: fixed;
-           top: 0;
-           right: -250px;
-           width: 230px;
-           height: 100%;
-           background: #f5f5f5;
-           padding: 1em;
-           box-shadow: -2px 0 5px rgba(0,0,0,0.3);
-           transition: right 0.3s ease;
-           z-index: 1100;
-       }
-       #categories.active {
-           right: 0;
-       }
+      #menu_button{
+              position: fixed;
+              top: 5px;
+              right: 20px;
+              color: #333;
+              font-size: 1em;
+              cursor: pointer;
+              margin-left: 1em;
+              padding:0.3em 0.5em;
+              transition: right 0.3s ease;
+              z-index: 1100;
 
-       #about{
-            text-decoration: none;
-            color: #69F;
-       }
-       #about:hover{
-           color: #C9F;
-       }
-       #about:active{
-           color: #99C;
-       }
-       #left{
-           position: fixed;
-           top: 100px;
-           left: 10px;
-           height: calc(100% - 100px);
-           overflow-y:auto;
-           background-color: #F9F9F9;
-           z-index: 900;
+          }
+          #menu_button:hover {
+              background-color: #eee;
+              border-radius: 5px;
+          }
+          #menu_button.active{
+              right: 270px;
 
-       }
-       main {
-           position: absolute;
-           top: 100px;
-           left: 280px;
-           right: 0;
-           bottom: 0;
-           overflow-y: auto;
-       }
-       section {
+          }
+         #menu_button.active{
+             right: 270px;
+         }
+         #categories{
+             position: fixed;
+             top: 0;
+             right: -250px;
+             width: 230px;
+             height: 100%;
+             background: #f5f5f5;
+             padding: 1em;
+             box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+             transition: right 0.3s ease;
+             z-index: 1100;
+         }
+         #categories.active {
+             right: 0;
+         }
 
-           border: 2px solid #f2f2f2;
+         #about{
+              text-decoration: none;
+              color: #69F;
+         }
+         #about:hover{
+             color: #C9F;
+         }
+         #about:active{
+             color: #99C;
+         }
+         #left{
+             position: fixed;
+             top: 100px;
+             left: 10px;
+             height: calc(100% - 100px);
+             overflow-y:auto;
+             background-color: #F9F9F9;
+             z-index: 900;
 
-           padding: 30px;
-           background-color: #F9F9F9
+         }
+         main {
+             position: absolute;
+             top: 100px;
+             left: 280px;
+             right: 0;
+             bottom: 0;
+             overflow-y: auto;
+         }
+         section {
+
+             border: 2px solid #f2f2f2;
+
+             padding: 30px;
+             background-color: #F9F9F9
 
 
-       }
+         }
 
-       body {
-           background-image: url('res/background1.jpg');
+        body {
+             background-image: url('../res/background1.jpg');
 
-       }
-       header{
-           position : fixed;
-           top : 0;
-           left: 0;
-           width: 100%;
-           border-bottom: 2px solid #69F;
-            z-index: 1000;
-           /*background-color: white;*/
+         }
+         header{
+             position : fixed;
+             top : 0;
+             left: 0;
+             width: 100%;
+             border-bottom: 2px solid #69F;
+              z-index: 1000;
+             /*background-color: white;*/
 
-       }
-     li a{
-            text-decoration: none;
-            color: #69F;
-        }
-        li a:hover{
-            color: #C9F;
-        }
-        li a:active{
-            color: #99C;
-        }
+         }
+       li a{
+              text-decoration: none;
+              color: #69F;
+          }
+          li a:hover{
+              color: #C9F;
+          }
+          li a:active{
+              color: #99C;
+          }
 
 
   </style>
@@ -206,10 +215,12 @@
       <tbody>
       <tr>
         <td colspan="2" style=" border: 2px solid #7fabc7; padding: 20px; background: #F9F9F9;">
-          <h3>
-            <img src="../res/profile.jpeg" alt="profile" width="50px" height="auto">
-            <span style="position: relative; top: -20px;">Cho&Kang</span>
-          </h3>
+            <h3>
+                <a href="../about.html" style="text-decoration: none; color: inherit;">
+                    <img src="../res/profile.jpeg" alt="profile" width="50px" height="auto">
+                    <span style="position: relative; top: -20px;">Cho&Kang</span>
+                </a>
+            </h3>
           <h5 style="color: #9c9ca0; position: relative; top: -15px;">Cho&Kang@hanyang.ToT</h5>
           <p style="position: relative; top: -30px;">쪼깡트립<br>25-하계 단기 파견 블로그</p>
         </td>
